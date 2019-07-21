@@ -9,16 +9,51 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: darkcyan;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.searchbar{
+    border-radius: 43px;
+    display: flex;
+    padding: 1rem;
+    padding-right: 20rem;
+    position: relative;
+}
+
+.button{
+  position:relative;
+  left:10px;
+}
+
+.main{
+  background: darkcyan;
+  overflow: auto;
+}
+
+.meme-wrap{
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin:3px;
+}
+.meme-wrap:hover:after{
+  content:"🔗";
+  color:rgb(187, 255, 255);
+  font-size:50px;
+  background:rgba(0,0,0,0.6);
+  position: absolute;
+  top:0; left:0; bottom:0; right:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .App-link {
   color: #61dafb;
 }

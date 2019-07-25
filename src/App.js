@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { FiSearch } from "react-icons/fi";
+import TextField from '@material-ui/core/TextField';
 
 class App extends React.Component {
 
@@ -25,10 +26,14 @@ class App extends React.Component {
     return (
       <div className="App">
         <form className="App-header" onSubmit={this.getMemes}>
-          <input className='searchbar'
-            value={text}
-            placeholder='Search'
-            onChange={e => this.setState({ text: e.target.value })} />
+          <TextField
+            id="outlined-with-placeholder"
+            label="Search Your Meme"
+            placeholder="Search"
+            margin="normal"
+            variant="outlined"
+            onChange={e => this.setState({ text: e.target.value })}
+            style={{width:'80%'}} />
           <FiSearch className='button'
             disabled={loading || !text}
             type='submit' />

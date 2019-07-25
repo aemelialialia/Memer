@@ -29,6 +29,7 @@ class App extends React.Component {
       <div className="App">
         <form className="App-header" onSubmit={this.getMemes}>
           <TextField
+          autoFocus
             id="outlined-with-placeholder"
             label="Search Your Meme"
             placeholder="Search"

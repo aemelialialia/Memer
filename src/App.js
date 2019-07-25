@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { FiSearch } from "react-icons/fi";
 import TextField from '@material-ui/core/TextField';
+import LinearProgress from '@material-ui/core/LinearProgress';
+
 
 class App extends React.Component {
 
@@ -13,7 +15,7 @@ class App extends React.Component {
 
   getMemes = async (e) => {
     e.preventDefault()
-    this.setState({ loading: true })
+    this.setState({ loading: true, meme: [] })
     var key = 'BFZynaGtycMTKfG606H1SHrTrfZ3FogR'
     var url = `http://api.giphy.com/v1/gifs/search?q=${this.state.text}&api_key=${key}`
     var r = await fetch(url)
@@ -38,6 +40,7 @@ class App extends React.Component {
             disabled={loading || !text}
             type='submit' />
         </form>
+        {loading && <LinearProgress />}
           <main className='main'>
             {memes.map(meme => {
               return <Meme key={meme.id} meme={meme} />
